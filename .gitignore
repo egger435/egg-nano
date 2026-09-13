@@ -1,0 +1,17 @@
+# dot files
+/.vscode/launch.json
+/.vscode/.cortex-debug.*.state.json
+/.settings
+/.eide/log
+/.eide.usr.ctx.json
+/.eide/*.usr.ctx.json
+
+# project out
+/build
+/bin
+/obj
+/out
+
+# eide template
+*.ept
+*.eide-template

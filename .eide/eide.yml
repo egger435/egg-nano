@@ -1,0 +1,113 @@
+version: "4.1"
+name: stm32f1xx_gcc
+type: ARM
+deviceName: STM32F102C8
+packDir: null
+srcDirs:
+  - src
+  - hal
+virtualFolder:
+  name: <virtual_root>
+  files: []
+  folders: []
+dependenceList: []
+outDir: build
+miscInfo:
+  lastBuildTime: 1608695075742
+  uid: 12a9c3124cec44b4e71d6bac98b11a8d
+targets:
+  Debug:
+    cppPreprocessAttrs:
+      defineList:
+        - USE_STDPERIPH_DRIVER
+        - STM32F10X_MD
+      incList:
+        - src
+        - lib/cmsis
+        - hal/STM32F10x_StdPeriph_Driver
+        - hal/STM32F10x_StdPeriph_Driver/inc
+        - hal/STM32F10x_StdPeriph_Driver/src
+      libList: []
+    excludeList:
+      - hal/STM32F10x_StdPeriph_Driver/src/stm32f10x_bkp.c
+      - hal/STM32F10x_StdPeriph_Driver/src/stm32f10x_can.c
+      - hal/STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.c
+      - hal/STM32F10x_StdPeriph_Driver/src/stm32f10x_crc.c
+      - hal/STM32F10x_StdPeriph_Driver/src/stm32f10x_dac.c
+      - hal/STM32F10x_StdPeriph_Driver/src/stm32f10x_dbgmcu.c
+      - hal/STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.c
+      - hal/STM32F10x_StdPeriph_Driver/src/stm32f10x_flash.c
+      - hal/STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.c
+      - hal/STM32F10x_StdPeriph_Driver/src/stm32f10x_i2c.c
+      - hal/STM32F10x_StdPeriph_Driver/src/stm32f10x_iwdg.c
+      - hal/STM32F10x_StdPeriph_Driver/src/stm32f10x_pwr.c
+      - hal/STM32F10x_StdPeriph_Driver/src/stm32f10x_rtc.c
+      - hal/STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.c
+      - hal/STM32F10x_StdPeriph_Driver/src/stm32f10x_wwdg.c
+    settings:
+      debugger: cortex-debug
+    toolchain: GCC
+    toolchainConfigMap:
+      GCC:
+        archExtensions: ""
+        cpuType: Cortex-M3
+        floatingPointHardware: default
+        options:
+          version: 5
+          afterBuildTasks: []
+          asm-compiler:
+            ASM_FLAGS: ""
+          beforeBuildTasks: []
+          c/cpp-compiler:
+            CXX_FLAGS: ""
+            C_FLAGS: ""
+            language-c: c11
+            language-cpp: c++11
+            one-elf-section-per-data: true
+            one-elf-section-per-function: true
+            optimization: level-debug
+            warnings: all-warnings
+          global:
+            $float-abi-type: softfp
+            misc-control: --specs=nosys.specs --specs=nano.specs
+            output-debug-info: enable
+          linker:
+            LD_FLAGS: ""
+            LIB_FLAGS: -lm
+            output-format: elf
+            remove-unused-input-sections: true
+        scatterFilePath: .\stm32f1x_64KB_flash.ld
+        storageLayout:
+          RAM:
+            - id: 1
+              isChecked: "1"
+              mem:
+                size: "0x2800"
+                startAddr: "0x20000000"
+              noInit: false
+              tag: IRAM
+          ROM:
+            - id: 1
+              isChecked: "1"
+              isStartup: true
+              mem:
+                size: "0x10000"
+                startAddr: "0x08000000"
+              tag: IROM
+        useCustomScatterFile: true
+    uploadConfigMap:
+      JLink:
+        baseAddr: "0x08000000"
+        bin: ""
+        cpuInfo:
+          cpuName: STM32F103C8
+          vendor: ST
+        otherCmds: ""
+        proType: 1
+        speed: 8000
+      OpenOCD:
+        baseAddr: "0x08000000"
+        bin: ""
+        interface: stlink
+        target: stm32f1x
+    uploader: OpenOCD
