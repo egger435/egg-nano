@@ -1,4 +1,3 @@
-// IIC.h —— 软件 IIC（参照 Mini-OLED，引脚改为 SCL=PA6 / SDA=PA5）
 #ifndef __IIC_H
 #define __IIC_H
 

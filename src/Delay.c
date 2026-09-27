@@ -1,4 +1,3 @@
-// Delay.c —— SysTick 忙等延时（参照 Mini-OLED，主频 72MHz）
 #include "stm32f10x.h"
 #include "Delay.h"
 
@@ -6,7 +5,7 @@ void Delay_us(uint32_t xus)
 {
     SysTick->LOAD = 72 * xus;
     SysTick->VAL = 0x00;
-    SysTick->CTRL = 0x00000005;             // HCLK 时钟源，使能
+    SysTick->CTRL = 0x00000005;        
     while (!(SysTick->CTRL & 0x00010000));
     SysTick->CTRL = 0x00000004;
 }

@@ -1,4 +1,3 @@
-// Delay.h —— SysTick 忙等延时（参照 Mini-OLED）
 #ifndef __DELAY_H
 #define __DELAY_H
 

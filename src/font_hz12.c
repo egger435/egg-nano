@@ -1,4 +1,3 @@
-// font_hz12.c —— 由 scripts/nano/make_oled_font.py 自动生成，勿手改！
 // 12x12 中文子集点阵字库（303 字，7272 字节 = 7.1KB）
 #include "font_hz12.h"
 
